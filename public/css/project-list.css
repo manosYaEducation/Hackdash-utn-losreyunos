@@ -1,0 +1,141 @@
+/* Project Catalog Styles */
+
+.projects-section {
+    min-height: 100vh;
+    padding: 6rem 1rem 2rem;
+}
+
+.projects-grid {
+    display: grid;
+    /* Default to 1 column on small screens for catalog view */
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; 
+}
+
+.project-card:hover {
+    transform: translateY(-5px); 
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    color: var(--color-text-dim);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Pushes meta and button to the bottom */
+}
+
+.project-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.status-completed {
+    color: #4CAF50; /* Green */
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.status-in-progress {
+    color: #FFC107; /* Yellow */
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.dashboard-link a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.dashboard-link a:hover {
+    text-decoration: underline;
+}
+
+.btn-ver-mas {
+    background: linear-gradient(135deg, var(--color-accent) 0%, #0ea5e9 100%);
+    color: var(--color-text-light);
+    border: none;
+    padding: 0.75rem 1.5rem; 
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block; /* Full width button */
+    margin-top: 1rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-ver-mas:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+}
+
+/* Pagination (Kept from original) */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.pagination-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: var(--color-text-light);
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination-button.active {
+    background: linear-gradient(135deg, var(--color-accent) 0%, #0ea5e9 100%);
+    border-color: var(--color-accent);
+    font-weight: bold;
+}
+
+
+/* --- Responsive Design (Project List Specific) --- */
+
+@media (min-width: 768px) {
+    /* Project Grid for Catalog View on Tablet/Desktop */
+    .projects-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columns on tablet */
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Project Grid for Catalog View on Large Desktop */
+    .projects-grid {
+        grid-template-columns: 1fr 1fr 1fr; /* 3 columns on large desktop */
+    }
+}
